@@ -115,8 +115,8 @@ pub const struct_SDL_WindowEvent = extern struct {
     padding1: u8,
     padding2: u8,
     padding3: u8,
-    data1: Sint32,
-    data2: Sint32,
+    data1: i32,
+    data2: i32,
 };
 pub const SDL_WindowEvent = struct_SDL_WindowEvent;
 
@@ -137,8 +137,8 @@ pub const struct_SDL_TextEditingEvent = extern struct {
     timestamp: u32,
     windowID: u32,
     text: [32]u8,
-    start: Sint32,
-    length: Sint32,
+    start: i32,
+    length: i32,
 };
 pub const SDL_TextEditingEvent = struct_SDL_TextEditingEvent;
 
@@ -156,10 +156,10 @@ pub const struct_SDL_MouseMotionEvent = extern struct {
     windowID: u32,
     which: u32,
     state: u32,
-    x: Sint32,
-    y: Sint32,
-    xrel: Sint32,
-    yrel: Sint32,
+    x: i32,
+    y: i32,
+    xrel: i32,
+    yrel: i32,
 };
 pub const SDL_MouseMotionEvent = struct_SDL_MouseMotionEvent;
 
@@ -172,8 +172,8 @@ pub const struct_SDL_MouseButtonEvent = extern struct {
     state: u8,
     clicks: u8,
     padding1: u8,
-    x: Sint32,
-    y: Sint32,
+    x: i32,
+    y: i32,
 };
 pub const SDL_MouseButtonEvent = struct_SDL_MouseButtonEvent;
 
@@ -182,8 +182,8 @@ pub const struct_SDL_MouseWheelEvent = extern struct {
     timestamp: u32,
     windowID: u32,
     which: u32,
-    x: Sint32,
-    y: Sint32,
+    x: i32,
+    y: i32,
     direction: u32,
 };
 pub const SDL_MouseWheelEvent = struct_SDL_MouseWheelEvent;
@@ -196,7 +196,7 @@ pub const struct_SDL_JoyAxisEvent = extern struct {
     padding1: u8,
     padding2: u8,
     padding3: u8,
-    value: Sint16,
+    value: i16,
     padding4: u16,
 };
 pub const SDL_JoyAxisEvent = struct_SDL_JoyAxisEvent;
@@ -209,8 +209,8 @@ pub const struct_SDL_JoyBallEvent = extern struct {
     padding1: u8,
     padding2: u8,
     padding3: u8,
-    xrel: Sint16,
-    yrel: Sint16,
+    xrel: i16,
+    yrel: i16,
 };
 pub const SDL_JoyBallEvent = struct_SDL_JoyBallEvent;
 
@@ -239,7 +239,7 @@ pub const SDL_JoyButtonEvent = struct_SDL_JoyButtonEvent;
 pub const struct_SDL_JoyDeviceEvent = extern struct {
     type: u32,
     timestamp: u32,
-    which: Sint32,
+    which: i32,
 };
 pub const SDL_JoyDeviceEvent = struct_SDL_JoyDeviceEvent;
 
@@ -251,7 +251,7 @@ pub const struct_SDL_ControllerAxisEvent = extern struct {
     padding1: u8,
     padding2: u8,
     padding3: u8,
-    value: Sint16,
+    value: i16,
     padding4: u16,
 };
 pub const SDL_ControllerAxisEvent = struct_SDL_ControllerAxisEvent;
@@ -270,7 +270,7 @@ pub const SDL_ControllerButtonEvent = struct_SDL_ControllerButtonEvent;
 pub const struct_SDL_ControllerDeviceEvent = extern struct {
     type: u32,
     timestamp: u32,
-    which: Sint32,
+    which: i32,
 };
 pub const SDL_ControllerDeviceEvent = struct_SDL_ControllerDeviceEvent;
 
@@ -347,7 +347,7 @@ pub const struct_SDL_UserEvent = extern struct {
     type: u32,
     timestamp: u32,
     windowID: u32,
-    code: Sint32,
+    code: i32,
     data1: ?*c_void,
     data2: ?*c_void,
 };
@@ -401,9 +401,9 @@ pub const SDL_eventaction = extern enum {
     SDL_GETEVENT = 2,
 };
 
-pub const SDL_GestureID = Sint64;
-pub const SDL_TouchID = Sint64;
-pub const SDL_FingerID = Sint64;
+pub const SDL_GestureID = i64;
+pub const SDL_TouchID = i64;
+pub const SDL_FingerID = i64;
 pub const SDL_Finger = struct_SDL_Finger;
 pub const struct_SDL_Finger = extern struct {
     id: SDL_FingerID,
@@ -412,7 +412,7 @@ pub const struct_SDL_Finger = extern struct {
     pressure: f32,
 };
 
-pub const SDL_EventFilter = ?extern fn (?*c_void, ?[*]SDL_Event) c_int;
+pub const SDL_EventFilter = ?extern fn (?*c_void, ?*SDL_Event) c_int;
 
 pub extern fn SDL_AddEventWatch(filter: SDL_EventFilter, userdata: ?*c_void) void;
 pub extern fn SDL_DelEventWatch(filter: SDL_EventFilter, userdata: ?*c_void) void;
@@ -420,7 +420,7 @@ pub extern fn SDL_EventState(type_0: u32, state: c_int) u8;
 pub extern fn SDL_FilterEvents(filter: SDL_EventFilter, userdata: ?*c_void) void;
 pub extern fn SDL_FlushEvents(minType: u32, maxType: u32) void;
 pub extern fn SDL_FlushEvent(type_0: u32) void;
-pub extern fn SDL_GetEventFilter(filter: ?[*]SDL_EventFilter, userdata: ?[*](?*c_void)) SDL_bool;
+pub extern fn SDL_GetEventFilter(filter: *SDL_EventFilter, userdata: ?*?*c_void) SDL_bool;
 pub extern fn SDL_GetNumTouchDevices() c_int;
 pub extern fn SDL_GetNumTouchFingers(touchID: SDL_TouchID) c_int;
 pub extern fn SDL_GetTouchDevice(index_0: c_int) SDL_TouchID;
@@ -429,13 +429,13 @@ pub extern fn SDL_HasEvents(minType: u32, maxType: u32) SDL_bool;
 pub extern fn SDL_HasEvent(type_0: u32) SDL_bool;
 pub extern fn SDL_LoadDollarTemplates(touchId: SDL_TouchID, src: ?[*]SDL_RWops) c_int;
 pub extern fn SDL_PeepEvents(events: ?[*]SDL_Event, numevents: c_int, action: SDL_eventaction, minType: u32, maxType: u32) c_int;
-pub extern fn SDL_PollEvent(event: ?[*]SDL_Event) c_int;
+pub extern fn SDL_PollEvent(event: ?*SDL_Event) c_int;
 pub extern fn SDL_PumpEvents() void;
-pub extern fn SDL_PushEvent(event: ?[*]SDL_Event) c_int;
+pub extern fn SDL_PushEvent(event: *SDL_Event) c_int;
 pub extern fn SDL_RecordGesture(touchId: SDL_TouchID) c_int;
 pub extern fn SDL_RegisterEvents(numevents: c_int) u32;
-pub extern fn SDL_SaveAllDollarTemplates(dst: ?[*]SDL_RWops) c_int;
-pub extern fn SDL_SaveDollarTemplate(gestureId: SDL_GestureID, dst: ?[*]SDL_RWops) c_int;
+pub extern fn SDL_SaveAllDollarTemplates(dst: *SDL_RWops) c_int;
+pub extern fn SDL_SaveDollarTemplate(gestureId: SDL_GestureID, dst: *SDL_RWops) c_int;
 pub extern fn SDL_SetEventFilter(filter: SDL_EventFilter, userdata: ?*c_void) void;
-pub extern fn SDL_WaitEvent(event: ?[*]SDL_Event) c_int;
-pub extern fn SDL_WaitEventTimeout(event: ?[*]SDL_Event, timeout: c_int) c_int;
+pub extern fn SDL_WaitEvent(event: ?*SDL_Event) c_int;
+pub extern fn SDL_WaitEventTimeout(event: ?*SDL_Event, timeout: c_int) c_int;

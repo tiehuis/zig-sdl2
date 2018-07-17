@@ -20,14 +20,14 @@ pub const struct_SDL_AssertData = extern struct {
     filename: ?[*]const u8,
     linenum: c_int,
     function: ?[*]const u8,
-    next: ?[*]const struct_SDL_AssertData,
+    next: ?*const struct_SDL_AssertData,
 };
 pub const SDL_AssertData = struct_SDL_AssertData;
 
-pub const SDL_AssertionHandler = ?extern fn (?[*]const SDL_AssertData, ?*c_void) SDL_AssertState;
+pub const SDL_AssertionHandler = ?extern fn (*const SDL_AssertData, ?*c_void) SDL_AssertState;
 
-pub extern fn SDL_GetAssertionHandler(puserdata: ?[*](?*c_void)) SDL_AssertionHandler;
-pub extern fn SDL_GetAssertionReport() ?[*]const SDL_AssertData;
+pub extern fn SDL_GetAssertionHandler(puserdata: ?*?*c_void) SDL_AssertionHandler;
+pub extern fn SDL_GetAssertionReport() ?*const SDL_AssertData;
 pub extern fn SDL_GetDefaultAssertionHandler() SDL_AssertionHandler;
 pub extern fn SDL_ResetAssertionReport() void;
 pub extern fn SDL_SetAssertionHandler(handler: SDL_AssertionHandler, userdata: ?*c_void) void;

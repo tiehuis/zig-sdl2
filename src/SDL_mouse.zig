@@ -37,19 +37,19 @@ pub const SDL_MouseWheelDirection = extern enum {
 };
 
 pub extern fn SDL_CaptureMouse(enabled: SDL_bool) c_int;
-pub extern fn SDL_CreateColorCursor(surface: ?[*]SDL_Surface, hot_x: c_int, hot_y: c_int) ?*SDL_Cursor;
+pub extern fn SDL_CreateColorCursor(surface: *SDL_Surface, hot_x: c_int, hot_y: c_int) ?*SDL_Cursor;
 pub extern fn SDL_CreateCursor(data: ?[*]const u8, mask: ?[*]const u8, w: c_int, h: c_int, hot_x: c_int, hot_y: c_int) ?*SDL_Cursor;
 pub extern fn SDL_CreateSystemCursor(id: SDL_SystemCursor) ?*SDL_Cursor;
-pub extern fn SDL_FreeCursor(cursor: ?*SDL_Cursor) void;
+pub extern fn SDL_FreeCursor(cursor: *SDL_Cursor) void;
 pub extern fn SDL_GetCursor() ?*SDL_Cursor;
 pub extern fn SDL_GetDefaultCursor() ?*SDL_Cursor;
-pub extern fn SDL_GetGlobalMouseState(x: ?[*]c_int, y: ?[*]c_int) u32;
+pub extern fn SDL_GetGlobalMouseState(x: ?*c_int, y: ?*c_int) u32;
 pub extern fn SDL_GetMouseFocus() ?*SDL_Window;
-pub extern fn SDL_GetMouseState(x: ?[*]c_int, y: ?[*]c_int) u32;
+pub extern fn SDL_GetMouseState(x: ?*c_int, y: ?*c_int) u32;
 pub extern fn SDL_GetRelativeMouseMode() SDL_bool;
-pub extern fn SDL_GetRelativeMouseState(x: ?[*]c_int, y: ?[*]c_int) u32;
-pub extern fn SDL_SetCursor(cursor: ?*SDL_Cursor) void;
+pub extern fn SDL_GetRelativeMouseState(x: ?*c_int, y: ?*c_int) u32;
+pub extern fn SDL_SetCursor(cursor: *SDL_Cursor) void;
 pub extern fn SDL_SetRelativeMouseMode(enabled: SDL_bool) c_int;
 pub extern fn SDL_ShowCursor(toggle: c_int) c_int;
 pub extern fn SDL_WarpMouseGlobal(x: c_int, y: c_int) c_int;
-pub extern fn SDL_WarpMouseInWindow(window: ?*SDL_Window, x: c_int, y: c_int) void;
+pub extern fn SDL_WarpMouseInWindow(window: *SDL_Window, x: c_int, y: c_int) void;

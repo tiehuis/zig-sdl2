@@ -1,4 +1,4 @@
-pub const SDL_TimerCallback = ?extern fn (u32, ?*c_void) u32;
+pub const SDL_TimerCallback = extern fn (u32, ?*c_void) u32;
 pub const SDL_TimerID = c_int;
 
 pub extern fn SDL_GetTicks() u32;

@@ -76,12 +76,12 @@ pub const SDL_HintPriority = extern enum {
     SDL_HINT_OVERRIDE = 2,
 };
 
-pub const SDL_HintCallback = ?extern fn (?*c_void, ?[*]const u8, ?[*]const u8, ?[*]const u8) void;
+pub const SDL_HintCallback = ?extern fn (?*c_void, [*]const u8, [*]const u8, [*]const u8) void;
 
-pub extern fn SDL_AddHintCallback(name: ?[*]const u8, callback: SDL_HintCallback, userdata: ?*c_void) void;
+pub extern fn SDL_AddHintCallback(name: [*]const u8, callback: SDL_HintCallback, userdata: ?*c_void) void;
 pub extern fn SDL_ClearHints() void;
-pub extern fn SDL_DelHintCallback(name: ?[*]const u8, callback: SDL_HintCallback, userdata: ?*c_void) void;
-pub extern fn SDL_GetHint(name: ?[*]const u8) ?[*]const u8;
-pub extern fn SDL_GetHintBoolean(name: ?[*]const u8, default_value: SDL_bool) SDL_bool;
-pub extern fn SDL_SetHint(name: ?[*]const u8, value: ?[*]const u8) SDL_bool;
-pub extern fn SDL_SetHintWithPriority(name: ?[*]const u8, value: ?[*]const u8, priority: SDL_HintPriority) SDL_bool;
+pub extern fn SDL_DelHintCallback(name: [*]const u8, callback: SDL_HintCallback, userdata: ?*c_void) void;
+pub extern fn SDL_GetHint(name: [*]const u8) ?[*]const u8;
+pub extern fn SDL_GetHintBoolean(name: [*]const u8, default_value: SDL_bool) SDL_bool;
+pub extern fn SDL_SetHint(name: [*]const u8, value: ?[*]const u8) SDL_bool;
+pub extern fn SDL_SetHintWithPriority(name: [*]const u8, value: ?[*]const u8, priority: SDL_HintPriority) SDL_bool;

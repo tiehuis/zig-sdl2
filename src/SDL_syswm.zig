@@ -59,4 +59,4 @@ pub const struct_SDL_SysWMinfo = extern struct {
 };
 pub const SDL_SysWMinfo = struct_SDL_SysWMinfo;
 
-pub extern fn SDL_GetWindowWMInfo(window: ?*SDL_Window, info: ?[*]SDL_SysWMinfo) SDL_bool;
+pub extern fn SDL_GetWindowWMInfo(window: *SDL_Window, info: *SDL_SysWMinfo) SDL_bool;

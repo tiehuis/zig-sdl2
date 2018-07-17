@@ -52,7 +52,7 @@ pub const SDL_Color = struct_SDL_Color;
 
 pub const struct_SDL_Palette = extern struct {
     ncolors: c_int,
-    colors: ?[*]SDL_Color,
+    colors: [*]SDL_Color,
     version: u32,
     refcount: c_int,
 };
@@ -60,7 +60,7 @@ pub const SDL_Palette = struct_SDL_Palette;
 
 pub const struct_SDL_PixelFormat = extern struct {
     format: u32,
-    palette: ?[*]SDL_Palette,
+    palette: ?*SDL_Palette,
     BitsPerPixel: u8,
     BytesPerPixel: u8,
     padding: [2]u8,
@@ -77,21 +77,21 @@ pub const struct_SDL_PixelFormat = extern struct {
     Bshift: u8,
     Ashift: u8,
     refcount: c_int,
-    next: ?[*]struct_SDL_PixelFormat,
+    next: ?*struct_SDL_PixelFormat,
 };
 pub const SDL_PixelFormat = struct_SDL_PixelFormat;
 
 pub extern fn SDL_AllocFormat(pixel_format: u32) ?[*]SDL_PixelFormat;
 pub extern fn SDL_AllocPalette(ncolors: c_int) ?[*]SDL_Palette;
 pub extern fn SDL_CalculateGammaRamp(gamma_0: f32, ramp: ?[*]u16) void;
-pub extern fn SDL_FreeFormat(format: ?[*]SDL_PixelFormat) void;
-pub extern fn SDL_FreePalette(palette: ?[*]SDL_Palette) void;
+pub extern fn SDL_FreeFormat(format: *SDL_PixelFormat) void;
+pub extern fn SDL_FreePalette(palette: *SDL_Palette) void;
 pub extern fn SDL_GetPixelFormatName(format: u32) ?[*]const u8;
-pub extern fn SDL_GetRGB(pixel: u32, format: ?[*]const SDL_PixelFormat, r: ?[*]u8, g: ?[*]u8, b: ?[*]u8) void;
-pub extern fn SDL_GetRGBA(pixel: u32, format: ?[*]const SDL_PixelFormat, r: ?[*]u8, g: ?[*]u8, b: ?[*]u8, a: ?[*]u8) void;
-pub extern fn SDL_MapRGB(format: ?[*]const SDL_PixelFormat, r: u8, g: u8, b: u8) u32;
-pub extern fn SDL_MapRGBA(format: ?[*]const SDL_PixelFormat, r: u8, g: u8, b: u8, a: u8) u32;
+pub extern fn SDL_GetRGB(pixel: u32, format: *const SDL_PixelFormat, r: ?*u8, g: ?*u8, b: ?*u8) void;
+pub extern fn SDL_GetRGBA(pixel: u32, format: *const SDL_PixelFormat, r: ?*u8, g: ?*u8, b: ?*u8, a: ?*u8) void;
+pub extern fn SDL_MapRGB(format: *const SDL_PixelFormat, r: u8, g: u8, b: u8) u32;
+pub extern fn SDL_MapRGBA(format: *const SDL_PixelFormat, r: u8, g: u8, b: u8, a: u8) u32;
 pub extern fn SDL_MasksToPixelFormatEnum(bpp: c_int, Rmask: u32, Gmask: u32, Bmask: u32, Amask: u32) u32;
-pub extern fn SDL_PixelFormatEnumToMasks(format: u32, bpp: ?[*]c_int, Rmask: ?[*]u32, Gmask: ?[*]u32, Bmask: ?[*]u32, Amask: ?[*]u32) SDL_bool;
-pub extern fn SDL_SetPaletteColors(palette: ?[*]SDL_Palette, colors: ?[*]const SDL_Color, firstcolor: c_int, ncolors: c_int) c_int;
-pub extern fn SDL_SetPixelFormatPalette(format: ?[*]SDL_PixelFormat, palette: ?[*]SDL_Palette) c_int;
+pub extern fn SDL_PixelFormatEnumToMasks(format: u32, bpp: ?*c_int, Rmask: ?*u32, Gmask: ?*u32, Bmask: ?*u32, Amask: ?*u32) SDL_bool;
+pub extern fn SDL_SetPaletteColors(palette: *SDL_Palette, colors: [*]const SDL_Color, firstcolor: c_int, ncolors: c_int) c_int;
+pub extern fn SDL_SetPixelFormatPalette(format: *SDL_PixelFormat, palette: *SDL_Palette) c_int;

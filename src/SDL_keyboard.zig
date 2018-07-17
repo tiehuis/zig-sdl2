@@ -1,4 +1,4 @@
-pub const SDL_Keycode = Sint32;
+pub const SDL_Keycode = i32;
 pub const SDLK_UNKNOWN = 0;
 pub const SDLK_RETURN = 13;
 pub const SDLK_ESCAPE = 27;
@@ -768,19 +768,19 @@ pub const struct_SDL_Keysym = extern struct {
 };
 pub const SDL_Keysym = struct_SDL_Keysym;
 
-pub extern fn SDL_GetKeyFromName(name: ?[*]const u8) SDL_Keycode;
+pub extern fn SDL_GetKeyFromName(name: [*]const u8) SDL_Keycode;
 pub extern fn SDL_GetKeyFromScancode(scancode: SDL_Scancode) SDL_Keycode;
 pub extern fn SDL_GetKeyName(key: SDL_Keycode) ?[*]const u8;
 pub extern fn SDL_GetKeyboardFocus() ?*SDL_Window;
 pub extern fn SDL_GetKeyboardState(numkeys: ?[*]c_int) ?[*]const u8;
 pub extern fn SDL_GetModState() SDL_Keymod;
 pub extern fn SDL_GetScancodeFromKey(key: SDL_Keycode) SDL_Scancode;
-pub extern fn SDL_GetScancodeFromName(name: ?[*]const u8) SDL_Scancode;
+pub extern fn SDL_GetScancodeFromName(name: [*]const u8) SDL_Scancode;
 pub extern fn SDL_GetScancodeName(scancode: SDL_Scancode) ?[*]const u8;
 pub extern fn SDL_HasScreenKeyboardSupport() SDL_bool;
-pub extern fn SDL_IsScreenKeyboardShown(window: ?*SDL_Window) SDL_bool;
+pub extern fn SDL_IsScreenKeyboardShown(window: *SDL_Window) SDL_bool;
 pub extern fn SDL_IsTextInputActive() SDL_bool;
 pub extern fn SDL_SetModState(modstate: SDL_Keymod) void;
-pub extern fn SDL_SetTextInputRect(rect: ?[*]SDL_Rect) void;
+pub extern fn SDL_SetTextInputRect(rect: ?*SDL_Rect) void;
 pub extern fn SDL_StartTextInput() void;
 pub extern fn SDL_StopTextInput() void;

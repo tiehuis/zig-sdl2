@@ -11,4 +11,4 @@ pub const SDL_PowerState = extern enum {
     SDL_POWERSTATE_CHARGED = 4,
 };
 
-pub extern fn SDL_GetPowerInfo(secs: ?[*]c_int, pct: ?[*]c_int) SDL_PowerState;
+pub extern fn SDL_GetPowerInfo(secs: ?*c_int, pct: ?*c_int) SDL_PowerState;

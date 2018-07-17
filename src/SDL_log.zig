@@ -36,22 +36,22 @@ pub const SDL_LogPriority = extern enum {
     SDL_NUM_LOG_PRIORITIES = 7,
 };
 
-pub const SDL_LogOutputFunction = ?extern fn (?*c_void, c_int, SDL_LogPriority, ?[*]const u8) void;
+pub const SDL_LogOutputFunction = ?extern fn (?*c_void, c_int, SDL_LogPriority, [*]const u8) void;
 
 // NOTE: varargs function
-pub extern fn SDL_Log(fmt: ?[*]const u8) void;
-pub extern fn SDL_LogCritical(category: c_int, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogDebug(category: c_int, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogError(category: c_int, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogGetOutputFunction(callback: ?[*]SDL_LogOutputFunction, userdata: ?[*](?*c_void)) void;
+pub extern fn SDL_Log(fmt: [*]const u8) void;
+pub extern fn SDL_LogCritical(category: c_int, fmt: [*]const u8) void;
+pub extern fn SDL_LogDebug(category: c_int, fmt: [*]const u8) void;
+pub extern fn SDL_LogError(category: c_int, fmt: [*]const u8) void;
+pub extern fn SDL_LogGetOutputFunction(callback: *SDL_LogOutputFunction, userdata: ?*?*c_void) void;
 pub extern fn SDL_LogGetPriority(category: c_int) SDL_LogPriority;
-pub extern fn SDL_LogInfo(category: c_int, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogMessage(category: c_int, priority: SDL_LogPriority, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogMessageV(category: c_int, priority: SDL_LogPriority, fmt: ?[*]const u8, ap: ?[*]struct___va_list_tag) void;
+pub extern fn SDL_LogInfo(category: c_int, fmt: [*]const u8) void;
+pub extern fn SDL_LogMessage(category: c_int, priority: SDL_LogPriority, fmt: [*]const u8) void;
+pub extern fn SDL_LogMessageV(category: c_int, priority: SDL_LogPriority, fmt: [*]const u8, ap: *struct___va_list_tag) void;
 pub extern fn SDL_LogResetPriorities() void;
 pub extern fn SDL_LogSetAllPriority(priority: SDL_LogPriority) void;
 pub extern fn SDL_LogSetOutputFunction(callback: SDL_LogOutputFunction, userdata: ?*c_void) void;
 pub extern fn SDL_LogSetPriority(category: c_int, priority: SDL_LogPriority) void;
-pub extern fn SDL_LogVerbose(category: c_int, fmt: ?[*]const u8) void;
-pub extern fn SDL_LogWarn(category: c_int, fmt: ?[*]const u8) void;
+pub extern fn SDL_LogVerbose(category: c_int, fmt: [*]const u8) void;
+pub extern fn SDL_LogWarn(category: c_int, fmt: [*]const u8) void;
 

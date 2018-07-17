@@ -81,33 +81,33 @@ pub const struct_SDL_GameControllerButtonBind = extern struct {
 };
 pub const SDL_GameControllerButtonBind = struct_SDL_GameControllerButtonBind;
 
-pub extern fn SDL_GameControllerAddMapping(mappingString: ?[*]const u8) c_int;
+pub extern fn SDL_GameControllerAddMapping(mappingString: [*]const u8) c_int;
 // NOTE: manual
-pub inline fn SDL_GameControllerAddMappingsFromFile(file: ?[*]const u8) c_int {
+pub inline fn SDL_GameControllerAddMappingsFromFile(file: [*]const u8) c_int {
     return SDL_GameControllerAddMappingsFromRW(SDL_RWFromFile(file, "rb"), 1);
 }
-pub extern fn SDL_GameControllerAddMappingsFromRW(rw: ?[*]SDL_RWops, freerw: c_int) c_int;
-pub extern fn SDL_GameControllerClose(gamecontroller: ?*SDL_GameController) void;
+pub extern fn SDL_GameControllerAddMappingsFromRW(rw: *SDL_RWops, freerw: c_int) c_int;
+pub extern fn SDL_GameControllerClose(gamecontroller: *SDL_GameController) void;
 pub extern fn SDL_GameControllerEventState(state: c_int) c_int;
 pub extern fn SDL_GameControllerFromInstanceID(joyid: SDL_JoystickID) ?*SDL_GameController;
-pub extern fn SDL_GameControllerGetAttached(gamecontroller: ?*SDL_GameController) SDL_bool;
+pub extern fn SDL_GameControllerGetAttached(gamecontroller: *SDL_GameController) SDL_bool;
 pub extern fn SDL_GameControllerGetAxisFromString(pchString: ?[*]const u8) SDL_GameControllerAxis;
-pub extern fn SDL_GameControllerGetAxis(gamecontroller: ?*SDL_GameController, axis: SDL_GameControllerAxis) Sint16;
-pub extern fn SDL_GameControllerGetBindForAxis(gamecontroller: ?*SDL_GameController, axis: SDL_GameControllerAxis) SDL_GameControllerButtonBind;
-pub extern fn SDL_GameControllerGetBindForButton(gamecontroller: ?*SDL_GameController, button: SDL_GameControllerButton) SDL_GameControllerButtonBind;
-pub extern fn SDL_GameControllerGetButtonFromString(pchString: ?[*]const u8) SDL_GameControllerButton;
-pub extern fn SDL_GameControllerGetButton(gamecontroller: ?*SDL_GameController, button: SDL_GameControllerButton) u8;
-pub extern fn SDL_GameControllerGetJoystick(gamecontroller: ?*SDL_GameController) ?*SDL_Joystick;
-pub extern fn SDL_GameControllerGetProduct(gamecontroller: ?*SDL_GameController) u16;
-pub extern fn SDL_GameControllerGetProductVersion(gamecontroller: ?*SDL_GameController) u16;
+pub extern fn SDL_GameControllerGetAxis(gamecontroller: *SDL_GameController, axis: SDL_GameControllerAxis) i16;
+pub extern fn SDL_GameControllerGetBindForAxis(gamecontroller: *SDL_GameController, axis: SDL_GameControllerAxis) SDL_GameControllerButtonBind;
+pub extern fn SDL_GameControllerGetBindForButton(gamecontroller: *SDL_GameController, button: SDL_GameControllerButton) SDL_GameControllerButtonBind;
+pub extern fn SDL_GameControllerGetButtonFromString(pchString: [*]const u8) SDL_GameControllerButton;
+pub extern fn SDL_GameControllerGetButton(gamecontroller: *SDL_GameController, button: SDL_GameControllerButton) u8;
+pub extern fn SDL_GameControllerGetJoystick(gamecontroller: *SDL_GameController) ?*SDL_Joystick;
+pub extern fn SDL_GameControllerGetProduct(gamecontroller: *SDL_GameController) u16;
+pub extern fn SDL_GameControllerGetProductVersion(gamecontroller: *SDL_GameController) u16;
 pub extern fn SDL_GameControllerGetStringForAxis(axis: SDL_GameControllerAxis) ?[*]const u8;
 pub extern fn SDL_GameControllerGetStringForButton(button: SDL_GameControllerButton) ?[*]const u8;
-pub extern fn SDL_GameControllerGetVendor(gamecontroller: ?*SDL_GameController) u16;
+pub extern fn SDL_GameControllerGetVendor(gamecontroller: *SDL_GameController) u16;
 pub extern fn SDL_GameControllerMappingForGUID(guid: SDL_JoystickGUID) ?[*]u8;
 pub extern fn SDL_GameControllerMappingForIndex(mapping_index: c_int) ?[*]u8;
-pub extern fn SDL_GameControllerMapping(gamecontroller: ?*SDL_GameController) ?[*]u8;
+pub extern fn SDL_GameControllerMapping(gamecontroller: *SDL_GameController) ?[*]u8;
 pub extern fn SDL_GameControllerNameForIndex(joystick_index: c_int) ?[*]const u8;
-pub extern fn SDL_GameControllerName(gamecontroller: ?*SDL_GameController) ?[*]const u8;
+pub extern fn SDL_GameControllerName(gamecontroller: *SDL_GameController) ?[*]const u8;
 pub extern fn SDL_GameControllerNumMappings() c_int;
 pub extern fn SDL_GameControllerOpen(joystick_index: c_int) ?*SDL_GameController;
 pub extern fn SDL_GameControllerUpdate() void;

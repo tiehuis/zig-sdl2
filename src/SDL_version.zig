@@ -11,7 +11,7 @@ pub const SDL_version = struct_SDL_version;
 
 pub extern fn SDL_GetRevision() ?[*]const u8;
 pub extern fn SDL_GetRevisionNumber() c_int;
-pub extern fn SDL_GetVersion(ver: ?[*]SDL_version) void;
+pub extern fn SDL_GetVersion(ver: *SDL_version) void;
 
 pub const SDL_COMPILEDVERSION = SDL_VERSIONNUM(c.SDL_MAJOR_VERSION, c.SDL_MINOR_VERSION, c.SDL_PATCH_VERSION);
 
