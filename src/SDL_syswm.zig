@@ -1,3 +1,5 @@
+const SDL_version = @import("SDL_version.zig").SDL_version;
+
 pub const SDL_SYSWM_UNKNOWN = 0;
 pub const SDL_SYSWM_WINDOWS = 1;
 pub const SDL_SYSWM_X11 = 2;
@@ -29,9 +31,7 @@ pub const struct_SDL_SysWMmsg = extern struct {
     version: SDL_version,
     subsystem: SDL_SYSWM_TYPE,
     msg: extern union {
-        x11: extern struct {
-            event: XEvent,
-        },
+        // NOTE: This actually has other members depending on the WM
         dummy: c_int,
     },
 };

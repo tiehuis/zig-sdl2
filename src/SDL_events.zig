@@ -1,4 +1,6 @@
 const SDL_WindowEventId = @import("SDL_video.zig").SDL_WindowEventId;
+const SDL_Keysym = @import("SDL_keyboard.zig").SDL_Keysym;
+const SDL_JoystickID = @import("SDL_joystick.zig").SDL_JoystickID;
 
 pub const SDL_FIRSTEVENT = 0;
 pub const SDL_QUIT = 256;
@@ -353,7 +355,7 @@ pub const struct_SDL_UserEvent = extern struct {
 };
 pub const SDL_UserEvent = struct_SDL_UserEvent;
 
-const SDL_SysWMmsg = @import("SDL_syswm.zig");
+const SDL_SysWMmsg = @import("SDL_syswm.zig").SDL_SysWMmsg;
 
 pub const struct_SDL_SysWMEvent = extern struct {
     type: u32,
