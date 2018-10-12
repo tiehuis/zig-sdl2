@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 const SDL_version = @import("SDL_version.zig").SDL_version;
 
 pub const SDL_SYSWM_UNKNOWN = 0;

@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const struct_SDL_Cursor = @OpaqueType();
 pub const SDL_Cursor = struct_SDL_Cursor;
 pub const SDL_SYSTEM_CURSOR_ARROW = 0;

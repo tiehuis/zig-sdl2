@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 const SDL_WindowEventId = @import("SDL_video.zig").SDL_WindowEventId;
 const SDL_Keysym = @import("SDL_keyboard.zig").SDL_Keysym;
 const SDL_JoystickID = @import("SDL_joystick.zig").SDL_JoystickID;

@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const struct__SDL_Joystick = @OpaqueType();
 pub const SDL_Joystick = struct__SDL_Joystick;
 pub const SDL_JoystickGUID = extern struct {

@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const SDL_CONTROLLER_AXIS_INVALID = -4294967295;
 pub const SDL_CONTROLLER_AXIS_LEFTX = 0;
 pub const SDL_CONTROLLER_AXIS_LEFTY = 1;

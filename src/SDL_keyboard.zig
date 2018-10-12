@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const SDL_Keycode = i32;
 pub const SDLK_UNKNOWN = 0;
 pub const SDLK_RETURN = 13;

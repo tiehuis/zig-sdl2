@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const SDL_BLENDMODE_NONE = 0;
 pub const SDL_BLENDMODE_BLEND = 1;
 pub const SDL_BLENDMODE_ADD = 2;

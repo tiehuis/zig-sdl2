@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const struct_SDL_Point = extern struct {
     x: c_int,
     y: c_int,

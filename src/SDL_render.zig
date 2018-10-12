@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const SDL_BLENDOPERATION_ADD = 1;
 pub const SDL_BLENDOPERATION_SUBTRACT = 2;
 pub const SDL_BLENDOPERATION_REV_SUBTRACT = 3;

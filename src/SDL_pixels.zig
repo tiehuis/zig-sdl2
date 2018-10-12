@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const SDL_PIXELFORMAT_UNKNOWN = 0;
 pub const SDL_PIXELFORMAT_INDEX1LSB = 286261504;
 pub const SDL_PIXELFORMAT_INDEX1MSB = 287310080;

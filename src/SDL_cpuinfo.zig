@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub extern fn SDL_GetCPUCacheLineSize() c_int;
 pub extern fn SDL_GetCPUCount() c_int;
 pub extern fn SDL_GetSystemRAM() c_int;

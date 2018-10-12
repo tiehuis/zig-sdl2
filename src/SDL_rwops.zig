@@ -1,3 +1,5 @@
+use @import("SDL_stdinc.zig");
+
 pub const struct_SDL_RWops = extern struct {
     size: ?extern fn (?[*]struct_SDL_RWops) i64,
     seek: ?extern fn (?[*]struct_SDL_RWops, i64, c_int) i64,
