@@ -1,4 +1,5 @@
 use @import("SDL_stdinc.zig");
+use @import("SDL_video.zig");
 
 pub const SDL_BLENDOPERATION_ADD = 1;
 pub const SDL_BLENDOPERATION_SUBTRACT = 2;
