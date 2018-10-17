@@ -1,5 +1,20 @@
 use @import("SDL_stdinc.zig");
 
+pub fn SDL_BUTTON(x: var) @typeOf(x) {
+    return (1 << ((x)-1));
+}
+
+pub const SDL_BUTTON_LEFT = 1;
+pub const SDL_BUTTON_MIDDLE = 2;
+pub const SDL_BUTTON_RIGHT = 3;
+pub const SDL_BUTTON_X1 = 4;
+pub const SDL_BUTTON_X2 = 5;
+pub const SDL_BUTTON_LMASK = SDL_BUTTON(SDL_BUTTON_LEFT);
+pub const SDL_BUTTON_MMASK = SDL_BUTTON(SDL_BUTTON_MIDDLE);
+pub const SDL_BUTTON_RMASK = SDL_BUTTON(SDL_BUTTON_RIGHT);
+pub const SDL_BUTTON_X1MASK = SDL_BUTTON(SDL_BUTTON_X1);
+pub const SDL_BUTTON_X2MASK = SDL_BUTTON(SDL_BUTTON_X2);
+
 pub const struct_SDL_Cursor = @OpaqueType();
 pub const SDL_Cursor = struct_SDL_Cursor;
 pub const SDL_SYSTEM_CURSOR_ARROW = 0;
