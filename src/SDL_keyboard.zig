@@ -255,7 +255,7 @@ pub const KMOD_NUM = 4096;
 pub const KMOD_CAPS = 8192;
 pub const KMOD_MODE = 16384;
 pub const KMOD_RESERVED = 32768;
-pub const SDL_Keymod = extern enum {
+pub const SDL_Keymod = extern enum.{
     KMOD_NONE = 0,
     KMOD_LSHIFT = 1,
     KMOD_RSHIFT = 2,
@@ -515,7 +515,7 @@ pub const SDL_SCANCODE_APP2 = 284;
 pub const SDL_SCANCODE_AUDIOREWIND = 285;
 pub const SDL_SCANCODE_AUDIOFASTFORWARD = 286;
 pub const SDL_NUM_SCANCODES = 512;
-pub const SDL_Scancode = extern enum {
+pub const SDL_Scancode = extern enum.{
     SDL_SCANCODE_UNKNOWN = 0,
     SDL_SCANCODE_A = 4,
     SDL_SCANCODE_B = 5,
@@ -762,7 +762,7 @@ pub const SDL_Scancode = extern enum {
     SDL_NUM_SCANCODES = 512,
 };
 
-pub const struct_SDL_Keysym = extern struct {
+pub const struct_SDL_Keysym = extern struct.{
     scancode: SDL_Scancode,
     sym: SDL_Keycode,
     mod: u16,

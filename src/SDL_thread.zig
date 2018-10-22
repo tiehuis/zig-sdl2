@@ -1,7 +1,7 @@
 pub const SDL_THREAD_PRIORITY_LOW = 0;
 pub const SDL_THREAD_PRIORITY_NORMAL = 1;
 pub const SDL_THREAD_PRIORITY_HIGH = 2;
-pub const SDL_ThreadPriority = extern enum {
+pub const SDL_ThreadPriority = extern enum.{
     SDL_THREAD_PRIORITY_LOW = 0,
     SDL_THREAD_PRIORITY_NORMAL = 1,
     SDL_THREAD_PRIORITY_HIGH = 2,

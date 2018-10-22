@@ -2,7 +2,7 @@ use @import("SDL_stdinc.zig");
 
 pub const struct__SDL_Joystick = @OpaqueType();
 pub const SDL_Joystick = struct__SDL_Joystick;
-pub const SDL_JoystickGUID = extern struct {
+pub const SDL_JoystickGUID = extern struct.{
     data: [16]u8,
 };
 
@@ -17,7 +17,7 @@ pub const SDL_JOYSTICK_TYPE_GUITAR = 6;
 pub const SDL_JOYSTICK_TYPE_DRUM_KIT = 7;
 pub const SDL_JOYSTICK_TYPE_ARCADE_PAD = 8;
 pub const SDL_JOYSTICK_TYPE_THROTTLE = 9;
-pub const SDL_JoystickType = extern enum {
+pub const SDL_JoystickType = extern enum.{
     SDL_JOYSTICK_TYPE_UNKNOWN = 0,
     SDL_JOYSTICK_TYPE_GAMECONTROLLER = 1,
     SDL_JOYSTICK_TYPE_WHEEL = 2,
@@ -37,7 +37,7 @@ pub const SDL_JOYSTICK_POWER_MEDIUM = 2;
 pub const SDL_JOYSTICK_POWER_FULL = 3;
 pub const SDL_JOYSTICK_POWER_WIRED = 4;
 pub const SDL_JOYSTICK_POWER_MAX = 5;
-pub const SDL_JoystickPowerLevel = extern enum {
+pub const SDL_JoystickPowerLevel = extern enum.{
     SDL_JOYSTICK_POWER_UNKNOWN = -4294967295,
     SDL_JOYSTICK_POWER_EMPTY = 0,
     SDL_JOYSTICK_POWER_LOW = 1,

@@ -1,6 +1,6 @@
 pub const SDL_FALSE = 0;
 pub const SDL_TRUE = 1;
-pub const SDL_bool = extern enum {
+pub const SDL_bool = extern enum.{
     SDL_FALSE = 0,
     SDL_TRUE = 1,
 };

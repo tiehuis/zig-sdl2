@@ -2,7 +2,7 @@ use @import("SDL_stdinc.zig");
 
 pub const SDL_SpinLock = c_int;
 
-pub const SDL_atomic_t = extern struct {
+pub const SDL_atomic_t = extern struct.{
     value: c_int,
 };
 

@@ -1,6 +1,6 @@
 use @import("SDL_stdinc.zig");
 
-pub const struct_SDL_Surface = extern struct {
+pub const struct_SDL_Surface = extern struct.{
     flags: u32,
     format: *SDL_PixelFormat,
     w: c_int,

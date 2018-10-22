@@ -1,7 +1,7 @@
 use @import("SDL_stdinc.zig");
 
 pub fn SDL_BUTTON(x: var) @typeOf(x) {
-    return (1 << ((x)-1));
+    return (1 << ((x) - 1));
 }
 
 pub const SDL_BUTTON_LEFT = 1;
@@ -30,7 +30,7 @@ pub const SDL_SYSTEM_CURSOR_SIZEALL = 9;
 pub const SDL_SYSTEM_CURSOR_NO = 10;
 pub const SDL_SYSTEM_CURSOR_HAND = 11;
 pub const SDL_NUM_SYSTEM_CURSORS = 12;
-pub const SDL_SystemCursor = extern enum {
+pub const SDL_SystemCursor = extern enum.{
     SDL_SYSTEM_CURSOR_ARROW = 0,
     SDL_SYSTEM_CURSOR_IBEAM = 1,
     SDL_SYSTEM_CURSOR_WAIT = 2,
@@ -48,7 +48,7 @@ pub const SDL_SystemCursor = extern enum {
 
 pub const SDL_MOUSEWHEEL_NORMAL = 0;
 pub const SDL_MOUSEWHEEL_FLIPPED = 1;
-pub const SDL_MouseWheelDirection = extern enum {
+pub const SDL_MouseWheelDirection = extern enum.{
     SDL_MOUSEWHEEL_NORMAL = 0,
     SDL_MOUSEWHEEL_FLIPPED = 1,
 };

@@ -7,13 +7,13 @@ pub const SDL_AudioDeviceID = u32;
 pub const SDL_AUDIO_STOPPED = 0;
 pub const SDL_AUDIO_PLAYING = 1;
 pub const SDL_AUDIO_PAUSED = 2;
-pub const SDL_AudioStatus = extern enum {
+pub const SDL_AudioStatus = extern enum.{
     SDL_AUDIO_STOPPED = 0,
     SDL_AUDIO_PLAYING = 1,
     SDL_AUDIO_PAUSED = 2,
 };
 
-pub const struct_SDL_AudioCVT = extern struct {
+pub const struct_SDL_AudioCVT = extern struct.{
     needed: c_int,
     src_format: SDL_AudioFormat,
     dst_format: SDL_AudioFormat,
@@ -28,7 +28,7 @@ pub const struct_SDL_AudioCVT = extern struct {
 };
 pub const SDL_AudioCVT = struct_SDL_AudioCVT;
 
-pub const struct_SDL_AudioSpec = extern struct {
+pub const struct_SDL_AudioSpec = extern struct.{
     freq: c_int,
     format: SDL_AudioFormat,
     channels: u8,

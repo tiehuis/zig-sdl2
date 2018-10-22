@@ -1,12 +1,12 @@
 pub const struct__SDL_Haptic = @OpaqueType();
 pub const SDL_Haptic = struct__SDL_Haptic;
-pub const struct_SDL_HapticDirection = extern struct {
+pub const struct_SDL_HapticDirection = extern struct.{
     type: u8,
     dir: [3]i32,
 };
 
 pub const SDL_HapticDirection = struct_SDL_HapticDirection;
-pub const struct_SDL_HapticConstant = extern struct {
+pub const struct_SDL_HapticConstant = extern struct.{
     type: u16,
     direction: SDL_HapticDirection,
     length: u32,
@@ -21,7 +21,7 @@ pub const struct_SDL_HapticConstant = extern struct {
 };
 
 pub const SDL_HapticConstant = struct_SDL_HapticConstant;
-pub const struct_SDL_HapticPeriodic = extern struct {
+pub const struct_SDL_HapticPeriodic = extern struct.{
     type: u16,
     direction: SDL_HapticDirection,
     length: u32,
@@ -39,7 +39,7 @@ pub const struct_SDL_HapticPeriodic = extern struct {
 };
 
 pub const SDL_HapticPeriodic = struct_SDL_HapticPeriodic;
-pub const struct_SDL_HapticCondition = extern struct {
+pub const struct_SDL_HapticCondition = extern struct.{
     type: u16,
     direction: SDL_HapticDirection,
     length: u32,
@@ -55,7 +55,7 @@ pub const struct_SDL_HapticCondition = extern struct {
 };
 
 pub const SDL_HapticCondition = struct_SDL_HapticCondition;
-pub const struct_SDL_HapticRamp = extern struct {
+pub const struct_SDL_HapticRamp = extern struct.{
     type: u16,
     direction: SDL_HapticDirection,
     length: u32,
@@ -71,7 +71,7 @@ pub const struct_SDL_HapticRamp = extern struct {
 };
 
 pub const SDL_HapticRamp = struct_SDL_HapticRamp;
-pub const struct_SDL_HapticLeftRight = extern struct {
+pub const struct_SDL_HapticLeftRight = extern struct.{
     type: u16,
     length: u32,
     large_magnitude: u16,
@@ -79,7 +79,7 @@ pub const struct_SDL_HapticLeftRight = extern struct {
 };
 
 pub const SDL_HapticLeftRight = struct_SDL_HapticLeftRight;
-pub const struct_SDL_HapticCustom = extern struct {
+pub const struct_SDL_HapticCustom = extern struct.{
     type: u16,
     direction: SDL_HapticDirection,
     length: u32,
@@ -97,7 +97,7 @@ pub const struct_SDL_HapticCustom = extern struct {
 };
 
 pub const SDL_HapticCustom = struct_SDL_HapticCustom;
-pub const union_SDL_HapticEffect = extern union {
+pub const union_SDL_HapticEffect = extern union.{
     type: u16,
     constant: SDL_HapticConstant,
     periodic: SDL_HapticPeriodic,

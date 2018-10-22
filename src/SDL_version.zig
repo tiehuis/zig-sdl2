@@ -1,7 +1,7 @@
 // NOTE: want to parse directly from system SDL where possible
 const c = @cImport("SDL2/SDL.h");
 
-pub const struct_SDL_version = extern struct {
+pub const struct_SDL_version = extern struct.{
     major: u8,
     minor: u8,
     patch: u8,

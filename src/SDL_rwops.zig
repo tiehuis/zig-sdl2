@@ -1,23 +1,23 @@
 use @import("SDL_stdinc.zig");
 
-pub const struct_SDL_RWops = extern struct {
+pub const struct_SDL_RWops = extern struct.{
     size: ?extern fn (?[*]struct_SDL_RWops) i64,
     seek: ?extern fn (?[*]struct_SDL_RWops, i64, c_int) i64,
     read: ?extern fn (?[*]struct_SDL_RWops, ?*c_void, usize, usize) usize,
     write: ?extern fn (?[*]struct_SDL_RWops, ?*const c_void, usize, usize) usize,
     close: ?extern fn (?[*]struct_SDL_RWops) c_int,
     type: u32,
-    hidden: extern union {
-        stdio: extern struct {
+    hidden: extern union.{
+        stdio: extern struct.{
             autoclose: SDL_bool,
             fp: ?[*]FILE,
         },
-        mem: extern struct {
+        mem: extern struct.{
             base: ?[*]u8,
             here: ?[*]u8,
             stop: ?[*]u8,
         },
-        unknown: extern struct {
+        unknown: extern struct.{
             data1: ?*c_void,
             data2: ?*c_void,
         },

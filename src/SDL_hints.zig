@@ -72,7 +72,7 @@ pub const SDL_HINT_DEFAULT = 0;
 pub const SDL_HINT_NORMAL = 1;
 pub const SDL_HINT_OVERRIDE = 2;
 
-pub const SDL_HintPriority = extern enum {
+pub const SDL_HintPriority = extern enum.{
     SDL_HINT_DEFAULT = 0,
     SDL_HINT_NORMAL = 1,
     SDL_HINT_OVERRIDE = 2,

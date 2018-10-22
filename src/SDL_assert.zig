@@ -4,7 +4,7 @@ pub const SDL_ASSERTION_ABORT = 2;
 pub const SDL_ASSERTION_IGNORE = 3;
 pub const SDL_ASSERTION_ALWAYS_IGNORE = 4;
 
-pub const SDL_AssertState = extern enum {
+pub const SDL_AssertState = extern enum.{
     SDL_ASSERTION_RETRY = 0,
     SDL_ASSERTION_BREAK = 1,
     SDL_ASSERTION_ABORT = 2,
@@ -13,7 +13,7 @@ pub const SDL_AssertState = extern enum {
 };
 
 pub const SDL_assert_data = SDL_AssertData;
-pub const struct_SDL_AssertData = extern struct {
+pub const struct_SDL_AssertData = extern struct.{
     always_ignore: c_int,
     trigger_count: c_uint,
     condition: ?[*]const u8,

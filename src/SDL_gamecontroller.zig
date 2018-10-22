@@ -8,7 +8,7 @@ pub const SDL_CONTROLLER_AXIS_RIGHTY = 3;
 pub const SDL_CONTROLLER_AXIS_TRIGGERLEFT = 4;
 pub const SDL_CONTROLLER_AXIS_TRIGGERRIGHT = 5;
 pub const SDL_CONTROLLER_AXIS_MAX = 6;
-pub const SDL_GameControllerAxis = extern enum {
+pub const SDL_GameControllerAxis = extern enum.{
     SDL_CONTROLLER_AXIS_INVALID = -4294967295,
     SDL_CONTROLLER_AXIS_LEFTX = 0,
     SDL_CONTROLLER_AXIS_LEFTY = 1,
@@ -36,7 +36,7 @@ pub const SDL_CONTROLLER_BUTTON_DPAD_DOWN = 12;
 pub const SDL_CONTROLLER_BUTTON_DPAD_LEFT = 13;
 pub const SDL_CONTROLLER_BUTTON_DPAD_RIGHT = 14;
 pub const SDL_CONTROLLER_BUTTON_MAX = 15;
-pub const SDL_GameControllerButton = extern enum {
+pub const SDL_GameControllerButton = extern enum.{
     SDL_CONTROLLER_BUTTON_INVALID = -4294967295,
     SDL_CONTROLLER_BUTTON_A = 0,
     SDL_CONTROLLER_BUTTON_B = 1,
@@ -60,7 +60,7 @@ pub const SDL_CONTROLLER_BINDTYPE_NONE = 0;
 pub const SDL_CONTROLLER_BINDTYPE_BUTTON = 1;
 pub const SDL_CONTROLLER_BINDTYPE_AXIS = 2;
 pub const SDL_CONTROLLER_BINDTYPE_HAT = 3;
-pub const SDL_GameControllerBindType = extern enum {
+pub const SDL_GameControllerBindType = extern enum.{
     SDL_CONTROLLER_BINDTYPE_NONE = 0,
     SDL_CONTROLLER_BINDTYPE_BUTTON = 1,
     SDL_CONTROLLER_BINDTYPE_AXIS = 2,
@@ -70,12 +70,12 @@ pub const SDL_GameControllerBindType = extern enum {
 pub const struct__SDL_GameController = @OpaqueType();
 pub const SDL_GameController = struct__SDL_GameController;
 
-pub const struct_SDL_GameControllerButtonBind = extern struct {
+pub const struct_SDL_GameControllerButtonBind = extern struct.{
     bindType: SDL_GameControllerBindType,
-    value: extern union {
+    value: extern union.{
         button: c_int,
         axis: c_int,
-        hat: extern struct {
+        hat: extern struct.{
             hat: c_int,
             hat_mask: c_int,
         },

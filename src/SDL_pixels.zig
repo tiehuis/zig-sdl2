@@ -44,7 +44,7 @@ pub const SDL_PIXELFORMAT_NV12 = 842094158;
 pub const SDL_PIXELFORMAT_NV21 = 825382478;
 pub const SDL_PIXELFORMAT_EXTERNAL_OES = 542328143;
 
-pub const struct_SDL_Color = extern struct {
+pub const struct_SDL_Color = extern struct.{
     r: u8,
     g: u8,
     b: u8,
@@ -52,7 +52,7 @@ pub const struct_SDL_Color = extern struct {
 };
 pub const SDL_Color = struct_SDL_Color;
 
-pub const struct_SDL_Palette = extern struct {
+pub const struct_SDL_Palette = extern struct.{
     ncolors: c_int,
     colors: [*]SDL_Color,
     version: u32,
@@ -60,7 +60,7 @@ pub const struct_SDL_Palette = extern struct {
 };
 pub const SDL_Palette = struct_SDL_Palette;
 
-pub const struct_SDL_PixelFormat = extern struct {
+pub const struct_SDL_PixelFormat = extern struct.{
     format: u32,
     palette: ?*SDL_Palette,
     BitsPerPixel: u8,

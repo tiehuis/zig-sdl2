@@ -5,7 +5,7 @@ pub const SDL_BLENDMODE_BLEND = 1;
 pub const SDL_BLENDMODE_ADD = 2;
 pub const SDL_BLENDMODE_MOD = 4;
 pub const SDL_BLENDMODE_INVALID = 2147483647;
-pub const SDL_BlendMode = extern enum {
+pub const SDL_BlendMode = extern enum.{
     SDL_BLENDMODE_NONE = 0,
     SDL_BLENDMODE_BLEND = 1,
     SDL_BLENDMODE_ADD = 2,
@@ -40,7 +40,7 @@ pub const SDL_GL_FRAMEBUFFER_SRGB_CAPABLE = 23;
 pub const SDL_GL_CONTEXT_RELEASE_BEHAVIOR = 24;
 pub const SDL_GL_CONTEXT_RESET_NOTIFICATION = 25;
 pub const SDL_GL_CONTEXT_NO_ERROR = 26;
-pub const SDL_GLattr = extern enum {
+pub const SDL_GLattr = extern enum.{
     SDL_GL_RED_SIZE = 0,
     SDL_GL_GREEN_SIZE = 1,
     SDL_GL_BLUE_SIZE = 2,
@@ -74,7 +74,7 @@ pub const SDL_GL_CONTEXT_DEBUG_FLAG = 1;
 pub const SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG = 2;
 pub const SDL_GL_CONTEXT_ROBUST_ACCESS_FLAG = 4;
 pub const SDL_GL_CONTEXT_RESET_ISOLATION_FLAG = 8;
-pub const SDL_GLcontextFlag = extern enum {
+pub const SDL_GLcontextFlag = extern enum.{
     SDL_GL_CONTEXT_DEBUG_FLAG = 1,
     SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG = 2,
     SDL_GL_CONTEXT_ROBUST_ACCESS_FLAG = 4,
@@ -84,7 +84,7 @@ pub const SDL_GLcontextFlag = extern enum {
 pub const SDL_GL_CONTEXT_PROFILE_CORE = 1;
 pub const SDL_GL_CONTEXT_PROFILE_COMPATIBILITY = 2;
 pub const SDL_GL_CONTEXT_PROFILE_ES = 4;
-pub const SDL_GLprofile = extern enum {
+pub const SDL_GLprofile = extern enum.{
     SDL_GL_CONTEXT_PROFILE_CORE = 1,
     SDL_GL_CONTEXT_PROFILE_COMPATIBILITY = 2,
     SDL_GL_CONTEXT_PROFILE_ES = 4,
@@ -95,14 +95,14 @@ pub const SDL_GLprofile = extern enum {
 // SDL_GLcontextResetNotification
 pub const SDL_GL_CONTEXT_RELEASE_BEHAVIOR_NONE = 0;
 pub const SDL_GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH = 1;
-pub const SDL_GLcontextReleaseFlag = extern enum {
+pub const SDL_GLcontextReleaseFlag = extern enum.{
     SDL_GL_CONTEXT_RELEASE_BEHAVIOR_NONE = 0,
     SDL_GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH = 1,
 };
 
 pub const SDL_GL_CONTEXT_RESET_NO_NOTIFICATION = 0;
 pub const SDL_GL_CONTEXT_RESET_LOSE_CONTEXT = 1;
-pub const SDL_GLContextResetNotification = extern enum {
+pub const SDL_GLContextResetNotification = extern enum.{
     SDL_GL_CONTEXT_RESET_NO_NOTIFICATION = 0,
     SDL_GL_CONTEXT_RESET_LOSE_CONTEXT = 1,
 };
@@ -117,7 +117,7 @@ pub const SDL_HITTEST_RESIZE_BOTTOMRIGHT = 6;
 pub const SDL_HITTEST_RESIZE_BOTTOM = 7;
 pub const SDL_HITTEST_RESIZE_BOTTOMLEFT = 8;
 pub const SDL_HITTEST_RESIZE_LEFT = 9;
-pub const SDL_HitTestResult = extern enum {
+pub const SDL_HitTestResult = extern enum.{
     SDL_HITTEST_NORMAL = 0,
     SDL_HITTEST_DRAGGABLE = 1,
     SDL_HITTEST_RESIZE_TOPLEFT = 2,
@@ -132,7 +132,7 @@ pub const SDL_HitTestResult = extern enum {
 
 pub const SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT = 1;
 pub const SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT = 2;
-pub const SDL_MessageBoxButtonFlags = extern enum {
+pub const SDL_MessageBoxButtonFlags = extern enum.{
     SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT = 1,
     SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT = 2,
 };
@@ -142,7 +142,7 @@ pub const SDL_MESSAGEBOX_COLOR_BUTTON_BORDER = 2;
 pub const SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND = 3;
 pub const SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED = 4;
 pub const SDL_MESSAGEBOX_COLOR_MAX = 5;
-pub const SDL_MessageBoxColorType = extern enum {
+pub const SDL_MessageBoxColorType = extern enum.{
     SDL_MESSAGEBOX_COLOR_BACKGROUND = 0,
     SDL_MESSAGEBOX_COLOR_TEXT = 1,
     SDL_MESSAGEBOX_COLOR_BUTTON_BORDER = 2,
@@ -154,7 +154,7 @@ pub const SDL_MessageBoxColorType = extern enum {
 pub const SDL_MESSAGEBOX_ERROR = 16;
 pub const SDL_MESSAGEBOX_WARNING = 32;
 pub const SDL_MESSAGEBOX_INFORMATION = 64;
-pub const SDL_MessageBoxFlags = extern enum {
+pub const SDL_MessageBoxFlags = extern enum.{
     SDL_MESSAGEBOX_ERROR = 16,
     SDL_MESSAGEBOX_WARNING = 32,
     SDL_MESSAGEBOX_INFORMATION = 64,
@@ -181,7 +181,7 @@ pub const SDL_WINDOW_UTILITY = 131072;
 pub const SDL_WINDOW_TOOLTIP = 262144;
 pub const SDL_WINDOW_POPUP_MENU = 524288;
 pub const SDL_WINDOW_VULKAN = 268435456;
-pub const SDL_WindowFlags = extern enum {
+pub const SDL_WindowFlags = extern enum.{
     SDL_WINDOW_FULLSCREEN = 1,
     SDL_WINDOW_OPENGL = 2,
     SDL_WINDOW_SHOWN = 4,
@@ -244,7 +244,7 @@ pub const SDL_WINDOWEVENT_FOCUS_LOST = 13;
 pub const SDL_WINDOWEVENT_CLOSE = 14;
 pub const SDL_WINDOWEVENT_TAKE_FOCUS = 15;
 pub const SDL_WINDOWEVENT_HIT_TEST = 16;
-pub const SDL_WindowEventID = extern enum {
+pub const SDL_WindowEventID = extern enum.{
     SDL_WINDOWEVENT_NONE = 0,
     SDL_WINDOWEVENT_SHOWN = 1,
     SDL_WINDOWEVENT_HIDDEN = 2,
@@ -264,7 +264,7 @@ pub const SDL_WindowEventID = extern enum {
     SDL_WINDOWEVENT_HIT_TEST = 16,
 };
 
-pub const SDL_DisplayMode = extern struct {
+pub const SDL_DisplayMode = extern struct.{
     format: u32,
     w: c_int,
     h: c_int,
@@ -272,25 +272,25 @@ pub const SDL_DisplayMode = extern struct {
     driverdata: ?*c_void,
 };
 
-pub const SDL_MessageBoxButtonData = extern struct {
+pub const SDL_MessageBoxButtonData = extern struct.{
     flags: u32,
     buttonid: c_int,
     text: [*]const u8,
 };
 
-pub const SDL_MessageBoxColor = extern struct {
+pub const SDL_MessageBoxColor = extern struct.{
     r: u8,
     g: u8,
     b: u8,
 };
 
 // NOTE: manual
-pub const SDL_MessageBoxColorScheme = extern struct {
+pub const SDL_MessageBoxColorScheme = extern struct.{
     colors: [5]SDL_MessageBoxColor,
 };
 
 // NOTE: manual
-pub const SDL_MessageBoxData = extern struct {
+pub const SDL_MessageBoxData = extern struct.{
     flags: u32,
     window: ?*SDL_Window,
     title: [*]const u8,
