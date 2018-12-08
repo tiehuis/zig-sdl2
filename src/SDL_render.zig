@@ -92,6 +92,7 @@ pub const struct_SDL_Texture = @OpaqueType();
 pub const SDL_Texture = struct_SDL_Texture;
 
 const SDL_Rect = @import("SDL_rect.zig").SDL_Rect;
+const SDL_Point = @import("SDL_rect.zig").SDL_Point;
 
 pub extern fn SDL_ComposeCustomBlendMode(srcColorFactor: SDL_BlendFactor, dstColorFactor: SDL_BlendFactor, colorOperation: SDL_BlendOperation, srcAlphaFactor: SDL_BlendFactor, dstAlphaFactor: SDL_BlendFactor, alphaOperation: SDL_BlendOperation) SDL_BlendMode;
 pub extern fn SDL_CreateRenderer(window: *SDL_Window, index_0: c_int, flags: u32) ?*SDL_Renderer;
