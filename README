@@ -1,3 +1,7 @@
+DEPRECATED: This is no longer needed since Zig added specific C-pointer types for translated code.
+I recommend using C import directly. If there is any issue with the automatic translation process, you can
+make an issue on the main zig compiler repository and we can fix upstream.
+
 Minimal zig wrapper over SDL2.
 
 For now, the standard SDL naming conventions are used but these will be changed
